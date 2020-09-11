@@ -29,20 +29,15 @@ namespace DotNetCoreTesting
         {
             if (env.IsDevelopment())
             {
-                DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions
-                {
-
-                    SourceCodeLineCount = 1
-                };
-                app.UseDeveloperExceptionPage(developerExceptionPageOptions);
+             
+                app.UseDeveloperExceptionPage();
             }
 
-            app.UseFileServer();
-
+            app.UseStaticFiles();
+            //Environment Variables 
             app.Run(async (context) =>
             {
-                throw new Exception("This is bad code");
-                await context.Response.WriteAsync("Hello World");
+                await context.Response.WriteAsync("Hosting Environment: "+env.EnvironmentName);
 
             });
 
