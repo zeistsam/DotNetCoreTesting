@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace DotNetCoreTesting
 {
@@ -18,61 +19,33 @@ namespace DotNetCoreTesting
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
         }
 
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions
+                {
+
+                    SourceCodeLineCount = 1
+                };
+                app.UseDeveloperExceptionPage(developerExceptionPageOptions);
             }
 
-            //app.UseRouting();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync(_config["MyKey"]);
-            //    });
-            //});
-            //app.UseDefaultFiles();
-            //app.UseStaticFiles();//usefileserver instead of both
-             app.UseFileServer();
-
-            app.Use(async (context, nextra) =>
-            {
-                logger.LogInformation("MW1: Incoming Request");
-                await nextra();
-                logger.LogInformation("MW1: Outgoing Response");
-
-            });
-
-            app.Use(async (context, nextra) =>
-            {
-                logger.LogInformation("MW2: Incoming Request");
-                await nextra();
-                logger.LogInformation("MW2: Outgoing Response");
-
-            });
+            app.UseFileServer();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("MW3: Request Handled & Response produced");
-                logger.LogInformation("MW3: Request Handled & Response produced");
+                throw new Exception("This is bad code");
+                await context.Response.WriteAsync("Hello World");
 
             });
 
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response
-            //    .WriteAsync(_config["MyKey"]);
-            //});
         }
     }
 }
