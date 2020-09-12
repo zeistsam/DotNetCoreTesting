@@ -3,21 +3,19 @@
     <title></title>
 </head>
 <body>
-    <h1>@ViewData["PageTitle"]</h1>
-    @{
-        var Employee = ViewData["Employee"] as DotNetCoreTesting.Models.Employee;
-    }
+    <h1>@ViewBag.PageTitle</h1>
+  
     <div>
-        ID:@Employee.Id
+        ID:@ViewBag.Employee.Id
     </div>
     <div>
-        Name:@Employee.Name
+        Name:@ViewBag.Employee.Name
     </div>
     <div>
-        Department:@Employee.Department
+        Department:@ViewBag.Employee.Department
     </div>
     <div>
-        Email:@Employee.Email
+        Email:@ViewBag.Employee.Email
     </div>
 </body>
 </html>

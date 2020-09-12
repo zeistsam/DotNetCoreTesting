@@ -40,14 +40,15 @@ namespace DotNetCoreTesting.Controllers
         //    return new ObjectResult(model);
         //}
 
-        //Return View result
+        //Return View resultusing ViewBag
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            ViewData["Employee"] = model;
-            ViewData["PageTitle"] = "Employee";
+            ViewBag.Employee= model;
+            ViewBag.PageTitle = "Employee Details";
             return View();
         }
+
 
         //Return View with different path
         public ViewResult Details1()
