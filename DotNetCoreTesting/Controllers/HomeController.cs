@@ -24,9 +24,10 @@ namespace DotNetCoreTesting.Controllers
         //    _employeeRepository = new MockEmployeeRepository();
         //}
 
-        public string Index()
+        public ViewResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model= _employeeRepository.GetAllEmployees();
+            return View(model);
         }
 
         //public JsonResult Details()
