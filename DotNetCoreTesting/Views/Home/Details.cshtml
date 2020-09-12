@@ -1,4 +1,5 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model DotNetCoreTesting.Models.Employee
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
@@ -6,16 +7,16 @@
     <h1>@ViewBag.PageTitle</h1>
   
     <div>
-        ID:@ViewBag.Employee.Id
+        ID:@Model.Id
     </div>
     <div>
-        Name:@ViewBag.Employee.Name
+        Name:@Model.Name
     </div>
     <div>
-        Department:@ViewBag.Employee.Department
+        Department:@Model.Department
     </div>
     <div>
-        Email:@ViewBag.Employee.Email
+        Email:@Model.Email
     </div>
 </body>
 </html>
