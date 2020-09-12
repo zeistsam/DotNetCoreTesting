@@ -25,6 +25,9 @@ namespace DotNetCoreTesting
             services.AddControllers();
             //Option2 to Setup MVC
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            //MVC with XmlSerialiser
+            //services.AddMvc(options => options.EnableEndpointRouting = false).AddXmlSerializerFormatters();
+
             services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
         }
 
