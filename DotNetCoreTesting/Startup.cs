@@ -1,3 +1,4 @@
+using DotNetCoreTesting.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +25,7 @@ namespace DotNetCoreTesting
             services.AddControllers();
             //Option2 to Setup MVC
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
