@@ -3,6 +3,21 @@
     <title></title>
 </head>
 <body>
-    <h1>Details from details.cshtml</h1>
-    </body>
+    <h1>@ViewData["PageTitle"]</h1>
+    @{
+        var Employee = ViewData["Employee"] as DotNetCoreTesting.Models.Employee;
+    }
+    <div>
+        ID:@Employee.Id
+    </div>
+    <div>
+        Name:@Employee.Name
+    </div>
+    <div>
+        Department:@Employee.Department
+    </div>
+    <div>
+        Email:@Employee.Email
+    </div>
+</body>
 </html>
