@@ -1,11 +1,11 @@
 ﻿@model DotNetCoreTesting.ViewModels.HomeDetailsViewModel
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    <h1>@Model.PageTitle</h1>
-  
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Employee Details";
+}
+
+ <h1>@Model.PageTitle</h1>
     <div>
         ID:@Model.Employee.Id
     </div>
@@ -18,5 +18,4 @@
     <div>
         Email:@Model.Employee.Email
     </div>
-</body>
-</html>
+
