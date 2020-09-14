@@ -43,7 +43,7 @@ namespace DotNetCoreTesting.Controllers
         //}
 
         //Return View result using Strongly Type Views
-        public ViewResult Details()
+        public ViewResult Details(int id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
