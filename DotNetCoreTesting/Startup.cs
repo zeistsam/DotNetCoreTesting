@@ -40,7 +40,7 @@ namespace DotNetCoreTesting
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
             //Option 1 to setup MVC
             //app.UseRouting();
             //app.UseCors();
@@ -51,10 +51,11 @@ namespace DotNetCoreTesting
             //    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             //});
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
+            app.UseMvc();
 
             app.Run(async (context) =>
             {
