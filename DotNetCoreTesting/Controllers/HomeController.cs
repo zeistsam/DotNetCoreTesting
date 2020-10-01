@@ -48,6 +48,7 @@ namespace DotNetCoreTesting.Controllers
         [Route("{id?}")]
         public ViewResult Details(int? id)
         {
+
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
                 Employee = _employeeRepository.GetEmployee(id??1),
@@ -60,15 +61,21 @@ namespace DotNetCoreTesting.Controllers
 
 
         //Return View with different path
-        public ViewResult Details1()
+        public ViewResult Details1(int?id)
         {
             Employee model = _employeeRepository.GetEmployee(1);
             return View("MyViews/test.cshtml");
         }
-
+        [HttpGet]
         public ViewResult Create()
         {            
             return View();
+        }
+        [HttpPost]
+        public RedirectToActionResult Create(Employee employee)
+        {
+            Employee newEmployee = _employeeRepository.Add(employee);
+            return RedirectToAction("details", new { id = newEmployee.Id });
         }
     }
 }
