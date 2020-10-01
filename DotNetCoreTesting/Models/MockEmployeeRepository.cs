@@ -13,11 +13,11 @@ namespace DotNetCoreTesting.Models
         {
             _employeeList = new List<Employee>()
             {
-                new Employee(){Id=1,Name="Sam",Department="IT",Email="sam@yu.com" },
-                new Employee(){Id=2,Name="Ram",Department="HR",Email="ram@yu.com" },
-                new Employee(){Id=3,Name="Wam",Department="CS",Email="wam@yu.com" },
-                new Employee(){Id=4,Name="Bam",Department="PO",Email="bam@yu.com" },
-                new Employee(){Id=5,Name="Dam",Department="GS",Email="dam@yu.com" }
+                new Employee(){Id=1,Name="Sam",Department=Dept.IT,Email="sam@yu.com" },
+                new Employee(){Id=2,Name="Ram",Department=Dept.HR,Email="ram@yu.com" },
+                new Employee(){Id=3,Name="Wam",Department=Dept.Finance,Email="wam@yu.com" },
+                new Employee(){Id=4,Name="Bam",Department=Dept.Admin,Email="bam@yu.com" },
+                new Employee(){Id=5,Name="Dam",Department=Dept.CS,Email="dam@yu.com" }
 
             };
         }

@@ -65,5 +65,10 @@ namespace DotNetCoreTesting.Controllers
             Employee model = _employeeRepository.GetEmployee(1);
             return View("MyViews/test.cshtml");
         }
+
+        public ViewResult Create()
+        {            
+            return View();
+        }
     }
 }
