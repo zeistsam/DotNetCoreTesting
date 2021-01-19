@@ -18,5 +18,10 @@ namespace DotNetCoreTesting.Models
          ErrorMessage = "Invalid email format")]
         [Required]
         public string Email { get; set; }
+
+        public string PhotoPath { get; set; }
+
+
+
     }
 }

@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201002180040_PhotoPat.cs" />
+    <Compile Remove="Migrations\20201002180040_PhotoPat.Designer.cs" />
+    <Compile Remove="Migrations\20201002180147_SomeProperty.cs" />
+    <Compile Remove="Migrations\20201002180147_SomeProperty.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
       <PrivateAssets>all</PrivateAssets>
